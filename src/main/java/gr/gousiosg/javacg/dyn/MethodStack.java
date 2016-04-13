@@ -102,11 +102,11 @@ public class MethodStack {
         if (!stack.isEmpty()) { sb.append(stack.peek()); }
         sb.append("  ---  ").append(callname).append("=").append(System.nanoTime()).append("\n");// added in stack peek so it will also print the calling class
         
-        for(Object ob : argM)
+       /* for(Object ob : argM)
         {
             sb.append(" ").append(ob.getClass()); // GET THE PARAMETERS AND PRINT THE TYPE.
         }
-        
+         */
         fw.write(sb.toString());
         
         
@@ -122,7 +122,7 @@ public class MethodStack {
 
         String returnFrom = stack.pop();
         sb.setLength(0);
-        sb.append("\n<[").append(stack.size()).append("]");
+        sb.append("\n\n<[").append(stack.size()).append("]");
         sb.append("[").append(Thread.currentThread().getId()).append("]");
         sb.append(returnFrom).append("=").append(System.nanoTime()).append("\n\n");
         fw.write(sb.toString());
