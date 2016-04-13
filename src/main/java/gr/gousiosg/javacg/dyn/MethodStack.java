@@ -99,7 +99,8 @@ public class MethodStack {
         sb.setLength(0);
         sb.append(">[").append(stack.size()).append("]");
         sb.append("[").append(Thread.currentThread().getId()).append("]");
-        sb.append(stack.peek()).append("  ---  ").append(callname).append("=").append(System.nanoTime()).append("\n");// added in stack peek so it will also print the calling class
+        if (!stack.isEmpty()) { sb.append(stack.peek()); }
+        sb.append("  ---  ").append(callname).append("=").append(System.nanoTime()).append("\n");// added in stack peek so it will also print the calling class
         
         for(Object ob : argM)
         {
