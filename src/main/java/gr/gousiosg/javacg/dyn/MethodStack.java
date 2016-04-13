@@ -104,7 +104,7 @@ public class MethodStack {
         
         for(Object ob : argM)
         {
-            sb.append(" ").append(ob.toString());
+            sb.append(" ").append(ob.getClass()); // GET THE PARAMETERS AND PRINT THE TYPE.
         }
         
         fw.write(sb.toString());
