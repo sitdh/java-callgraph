@@ -171,7 +171,7 @@ public class Instrumenter implements ClassFileTransformer {
             methodName = "<init>";
 
         method.insertBefore("gr.gousiosg.javacg.dyn.MethodStack.push(\"" + className
-                + ":" + methodName + "\",$args);");// ADDED: $args which is an object array of the parameters
+                + ":" + methodName + "\");");// ADDED: $args which is an object array of the parameters
         method.insertAfter("gr.gousiosg.javacg.dyn.MethodStack.pop();");
     }
 
