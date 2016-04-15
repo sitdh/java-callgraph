@@ -107,6 +107,8 @@ public class MethodStack {
             sb.append(" ").append(ob.getClass().getName()); // GET THE PARAMETERS AND PRINT THE TYPE.
         }
          
+         sb.append("\n");
+         
         fw.write(sb.toString());
         
         
