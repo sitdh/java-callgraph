@@ -102,6 +102,8 @@ public class MethodStack {
         if (!stack.isEmpty()) { sb.append(stack.peek()); }
         sb.append("  ---  ").append(callname).append("=").append(System.nanoTime()).append("\n");// added in stack peek so it will also print the calling class
         
+        sb.append("Formal Param Types: ");
+        
         for(Object ob : argM)
         {
             sb.append(" ").append(ob.getClass().getName()); // GET THE PARAMETERS AND PRINT THE TYPE.
