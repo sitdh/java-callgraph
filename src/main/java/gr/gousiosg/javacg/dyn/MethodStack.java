@@ -81,8 +81,8 @@ public class MethodStack {
         sb = new StringBuffer();
     }
 
-//Object [] argM
-    public static void push(String callname) throws IOException {// added the object array in to pass the parameters to the
+
+    public static void push(String callname, Object [] argM) throws IOException {// added the object array in to pass the parameters to the
     // funciton in.
         if (threadid == -1)
             threadid = Thread.currentThread().getId();
@@ -101,17 +101,17 @@ public class MethodStack {
         sb.append(">[").append(stack.size()).append("]");
         sb.append("[").append(Thread.currentThread().getId()).append("]");
         if (!stack.isEmpty()) { sb.append(stack.peek()); }
-        sb.append("  ---  ").append(callname).append("=").append(System.nanoTime()).append("\n");// added in stack peek so it will also print the calling class
+        sb.append("  --->  ").append(callname).append("=").append(System.nanoTime()).append("\n");// added in stack peek so it will also print the calling class
         
         sb.append("Formal Param Types: ");
-       /* 
+        
         for(Object ob : argM)
         {
             sb.append(" ").append(ob.getClass().getName()); // GET THE PARAMETERS AND PRINT THE TYPE.
         }
          
          sb.append("\n");
-         */
+         
         fw.write(sb.toString());
         
         
