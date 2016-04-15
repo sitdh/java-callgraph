@@ -81,7 +81,7 @@ public class MethodStack {
         sb = new StringBuffer();
     }
 
-    public static void push(String callname,Object [] argM) throws IOException {// added the object array in to pass the parameters to the
+    public static void push(String callname, Object [] argM) throws IOException {// added the object array in to pass the parameters to the
     // funciton in.
         if (threadid == -1)
             threadid = Thread.currentThread().getId();
@@ -102,11 +102,11 @@ public class MethodStack {
         if (!stack.isEmpty()) { sb.append(stack.peek()); }
         sb.append("  ---  ").append(callname).append("=").append(System.nanoTime()).append("\n");// added in stack peek so it will also print the calling class
         
-       /* for(Object ob : argM)
+        for(Object ob : argM)
         {
-            sb.append(" ").append(ob.getClass()); // GET THE PARAMETERS AND PRINT THE TYPE.
+            sb.append(" ").append(ob.getClass().getName()); // GET THE PARAMETERS AND PRINT THE TYPE.
         }
-         */
+         
         fw.write(sb.toString());
         
         
